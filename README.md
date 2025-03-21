@@ -1,3 +1,7 @@
+This project is to host a personal website for Priyam Singhal.
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
