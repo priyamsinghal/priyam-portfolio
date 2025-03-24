@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -30,97 +30,29 @@ const Contact = () => {
         </h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-light-200 dark:bg-dark-200 p-6 rounded-lg">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-dark-200 dark:text-light-100 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-2 rounded-lg border border-light-300 dark:border-dark-100 bg-light-100 dark:bg-dark-300 text-dark-200 dark:text-light-100 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-dark-200 dark:text-light-100 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2 rounded-lg border border-light-300 dark:border-dark-100 bg-light-100 dark:bg-dark-300 text-dark-200 dark:text-light-100 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-dark-200 dark:text-light-100 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-2 rounded-lg border border-light-300 dark:border-dark-100 bg-light-100 dark:bg-dark-300 text-dark-200 dark:text-light-100 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-dark-200 dark:text-light-100 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-2 rounded-lg border border-light-300 dark:border-dark-100 bg-light-100 dark:bg-dark-300 text-dark-200 dark:text-light-100 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <button className="w-full bg-primary hover:bg-primary/90 text-light-100 py-2 px-4 rounded-lg transition-colors">
-                Send Message
-              </button>
-            </form>
-          </div>
           
           <div className="space-y-4">
             <div className="flex items-center space-x-4 text-dark-200 dark:text-light-100">
-              <EnvelopeIcon className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
-              <div>
-                <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-                  Email
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  priyamsinghal@aol.com
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4 text-dark-200 dark:text-light-100">
               <FaLinkedin className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
               <div>
-                <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-                  LinkedIn
-                </h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   <a href="https://www.linkedin.com/in/priyamsinghal/" target="_blank" rel="noopener noreferrer">
-                    https://www.linkedin.com/in/priyamsinghal/
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                      LinkedIn
+                    </h3>
                   </a>
                 </p>
               </div>
             </div>
-
             <div className="flex items-center space-x-4 text-dark-200 dark:text-light-100">
-              <MapPinIcon className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
+              <FaTwitter className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
               <div>
-                <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-                  Location
-                </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  San Francisco Bay Area, CA
+                  <a href="https://www.linkedin.com/in/priyamsinghal/" target="_blank" rel="noopener noreferrer">
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                      Twitter
+                    </h3>
+                  </a>
                 </p>
               </div>
             </div>

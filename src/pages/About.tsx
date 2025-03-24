@@ -1,14 +1,10 @@
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
+import ScrollReveal from '../components/ScrollReveal';
 
 const About = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-8"
-      >
+      <ScrollReveal>
         <h1 className="text-4xl font-bold text-dark-300 dark:text-light-100">
           About Me
         </h1>
@@ -57,7 +53,7 @@ const About = () => {
             </ul>
           </div>
         </div>
-      </motion.div>
+      </ScrollReveal>
     </div>
   );
 };
