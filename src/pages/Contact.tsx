@@ -1,22 +1,7 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData);
-  };
-
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <motion.div
