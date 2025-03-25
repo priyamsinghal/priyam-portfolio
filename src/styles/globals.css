@@ -4,5 +4,14 @@
 
 /* Add any global styles below */
 body {
-  @apply bg-white dark:bg-gray-900;
-} 
+  background-color: white;
+}
+
+body.dark {
+  background-color: #111827;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* Adjust this value based on your header height */
+}

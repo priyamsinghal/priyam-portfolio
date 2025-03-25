@@ -1,15 +1,59 @@
 import { motion } from 'framer-motion';
-import { resumeData } from '../data/resume';
+import { ExperienceItemProp, resumeData } from '../data/resume';
+import { useInView } from 'react-intersection-observer';
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1 },
+  },
+};
+
+const ExperienceItem = ({ company, title, period, location, description }: ExperienceItemProp, key:number) => {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={itemVariants}
+      className="relative mx-auto"
+    >
+      {/* <div className={`relative w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-0 ${
+          key % 2 === 0 ? "text-left" : "text-right"
+        }`} /> */}
+                
+                <div className="mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {title}
+                  </h3>
+                  <div className="text-lg text-blue-600 dark:text-blue-400">
+                    {company}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    {period} | {location}
+                  </div>
+                </div>
+
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                  {description.map((desc, i) => (
+                    <li key={i}>{desc}</li>
+                  ))}
+                </ul>
+    </motion.div>
+  );
+};
 
 const Experience = () => {
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.2 });
+
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-4xl font-bold text-dark-300 dark:text-light-100 mb-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-8">
+        <h1 className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-8">
           Experience
         </h1>
 
@@ -19,34 +63,12 @@ const Experience = () => {
             Professional Experience
           </h2>
           <div className="space-y-12">
-            {resumeData.experience.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="relative pl-8 border-l-2 border-blue-500 dark:border-blue-400"
-              >
+            
+            {resumeData.experience.map((exp: ExperienceItemProp, index) => (
+              <div className="relative pl-8 border-l-2 border-blue-500 dark:border-blue-400">
                 <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-0" />
-                
-                <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    {exp.title}
-                  </h3>
-                  <div className="text-lg text-blue-600 dark:text-blue-400">
-                    {exp.company}
-                  </div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">
-                    {exp.period} | {exp.location}
-                  </div>
-                </div>
-
-                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                  {exp.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
-                  ))}
-                </ul>
-              </motion.div>
+                <ExperienceItem key={index} {...exp}/>
+              </div>
             ))}
           </div>
         </div>
@@ -56,7 +78,13 @@ const Experience = () => {
           <h2 className="text-2xl font-semibold text-dark-300 dark:text-light-100 mb-6">
             Skills
           </h2>
-          <div className="bg-light-200 dark:bg-dark-200 p-6 rounded-lg">
+          <motion.div
+            ref={ref2}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView2 ? {opacity: 1, y: 0} : {opacity: 0, y:50}}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="bg-light-200 dark:bg-dark-200 p-6 rounded-lg">
             <div className="flex flex-wrap gap-2">
               {resumeData.skills.map((skill, i) => (
                 <span
@@ -67,23 +95,23 @@ const Experience = () => {
                 </span>
               ))}
             </div>
-          </div>
+            </div>
+          </motion.div>
         </div>
-
         {/* Education Section */}
         <div className="mb-12">
           <h2 className="text-2xl font-semibold text-dark-300 dark:text-light-100 mb-6">
             Education
           </h2>
+          <motion.div
+            ref={ref3}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView3 ? {opacity: 1, y: 0} : {opacity: 0, y:20}}
+            transition={{ duration: 0.8 }}
+          >
           <div className="space-y-8">
-            {resumeData.education.map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-light-200 dark:bg-dark-200 p-6 rounded-lg"
-              >
+            {resumeData.education.map((edu) => (
+              <div className="bg-light-200 dark:bg-dark-200 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-dark-300 dark:text-light-100">
                   {edu.degree}
                 </h3>
@@ -93,9 +121,10 @@ const Experience = () => {
                 <div className="text-sm text-dark-100 dark:text-gray-400">
                   {edu.period} | {edu.location}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
+          </motion.div>
         </div>
 
         {/* Certifications Section */}
@@ -107,9 +136,10 @@ const Experience = () => {
             {resumeData.certifications.map((cert, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
+                ref={ref4}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView4 ? {opacity: 1, y: 0} : {opacity: 0, y:20}}
+                transition={{ duration: 0.8 }}
                 className="bg-light-200 dark:bg-dark-200 p-6 rounded-lg"
               >
                 <h3 className="text-xl font-semibold text-dark-300 dark:text-light-100">
@@ -125,7 +155,6 @@ const Experience = () => {
             ))}
           </div>
         </div>
-      </motion.div>
     </div>
   );
 };

@@ -3,10 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Experience', path: '/experience' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Home', hash: '#hero' },
+  { name: 'About', hash: '#about' },
+  { name: 'Experience', hash: '#experience' },
+  { name: 'Contact', hash: '#contact' },
 ];
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-xl font-bold text-gray-900 dark:text-white">
+            <Link to="#hero" className="text-xl font-bold text-gray-900 dark:text-white">
               Priyam Singhal
             </Link>
           </div>
@@ -38,17 +38,17 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.path}
+                href={item.hash}
                 className={`${
-                  location.pathname === item.path
+                  location.hash === item.hash
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                 } transition-colors duration-200`}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -76,9 +76,9 @@ const Navbar = () => {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.path}
+                to={item.hash}
                 className={`${
-                  location.pathname === item.path
+                  location.hash === item.hash
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-gray-600 dark:text-gray-300'
                 } block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800`}

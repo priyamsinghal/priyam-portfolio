@@ -4,7 +4,7 @@ import FloatingBallScroll from '../Animations/FloatingBallScroll';
 
 const Hero = () => {  
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-24">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="absolute inset-0 pointer-events-none">
                 <FloatingBallScroll color="rgba(1, 0, 255, 0.6)" top="-10%" left="-10%" size="280px" direction="false" />
                 {/* <FloatingBallScroll color="rgba(255, 0, 1, 0.6)" top="20%" left="60%" size="280px" direction="true"/> */}
@@ -14,12 +14,12 @@ const Hero = () => {
       <div className="max-w-screen-2xl mx-auto px-8 sm:px-10 lg:px-12 flex flex-col md:flex-row items-center gap-8">
         {/* Text Content */}
         <motion.div 
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center md:text-left md:w-4/5"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Hi, I'm{' '}
             <span className="text-blue-600 dark:text-blue-400">
               Priyam Singhal
@@ -35,20 +35,11 @@ For some, this might come as a surprise, but my close network knew that this has
 While he is fully committed and thriving in his career, his words planted a seed in my mind. I felt an itch to break out of my routine and do something more creative—something that truly contributes to society. But between work and home commitments, I struggled to find the time. Even with a loving and supportive family, I couldn’t shake the feeling of being underappreciated at work.
 That’s when I made a decision: I needed to give myself an option—a chance to build something awesome. I didn't want to look back 10 years from now and regret not even trying.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-center">
-            <Link
-              to="/contact"
-              className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 
-                       transition-colors duration-300 inline-block text-center"
-            >
-              Get in Touch
-            </Link>
-          </div>
         </motion.div>
 
         {/* Profile Image */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="md:w-1/2 mt-12 md:mt-0"
@@ -67,7 +58,7 @@ That’s when I made a decision: I needed to give myself an option—a chance to
 
       {/* Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ 
           duration: 0.8,

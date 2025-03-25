@@ -1,8 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Experience from './pages/Experience';
-import Contact from './pages/Contact';
 import Home from './pages/Home';
 
 function App() {
@@ -14,8 +12,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<Home />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/experience" element={<Home />} />
+            <Route path="/contact" element={<Home />} />
           </Routes>
         </main>
         <Footer />

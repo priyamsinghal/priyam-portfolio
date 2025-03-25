@@ -1,4 +1,4 @@
-export interface Experience {
+export interface ExperienceItemProp {
   company: string;
   title: string;
   period: string;
@@ -6,7 +6,7 @@ export interface Experience {
   description: string[];
 }
 
-export interface Education {
+export interface EducationItemProp {
   school: string;
   degree: string;
   period: string;
@@ -14,7 +14,7 @@ export interface Education {
   details?: string[];
 }
 
-export interface Certification {
+export interface CertificationItemProp {
   name: string;
   issuer: string;
   date: string;
@@ -45,7 +45,7 @@ export const resumeData = {
       location: "Bay Area, CA",
       description: [
         "Organized a successful event for in-person 500+ LEADers from all",
-        "With a team of total 5 people, organized event logistics like registrations, speakers, content, scheduling, catering, seaKng, venues, sessions, swags, field trips, transportaKons, accommodaKons etc."
+        "With a team of total 5 people, organized event logistics like registrations, speakers, content, scheduling, catering, seating, venues, sessions, swags, field trips, transportations, accommodations etc."
       ]
     },
     {
@@ -56,7 +56,7 @@ export const resumeData = {
       description: [
         "Led engineering teams in developing large-scale distributed systems",
         "Drove technical strategy and architectural decisions",
-        "Led a 25+ person team developing Visual Search (Amazon Lens) mobile features including iOS and Android using ObjecKve-C, Java, Kotlin and ReactNaKve",
+        "Led a 25+ person team developing Visual Search (Amazon Lens) mobile features including iOS and Android using Objective-C, Java, Kotlin and ReactNative",
         "Collaborated with product, design, and backend teams to deliver successful products and shape the roadmap",
         "Conducted A/B tests to enhance user experience",
         "Hired, mentored, and developed software engineers"
@@ -79,8 +79,8 @@ export const resumeData = {
       period: "2010 - 2016",
       location: "Bay Area, CA",
       description: [
-        "Developed iOS features for the Apple POS applicaKon used in Apple Stores worldwide (EasyPay Touch)",
-        "Developed automaKon tesKng infrastructure based in ObjecKve-C"
+        "Developed iOS features for the Apple POS application used in Apple Stores worldwide (EasyPay Touch)",
+        "Developed automation testing infrastructure based in Objective-C"
       ]
     }
     // Add more experiences from the PDF
