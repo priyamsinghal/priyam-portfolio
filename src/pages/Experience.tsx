@@ -11,7 +11,7 @@ const itemVariants = {
   },
 };
 
-const ExperienceItem = ({ company, title, period, location, description }: ExperienceItemProp, key:number) => {
+const ExperienceItem = ({ company, title, period, location, description }: ExperienceItemProp) => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
   return (
     <motion.div
