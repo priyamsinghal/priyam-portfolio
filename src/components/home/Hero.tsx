@@ -3,7 +3,7 @@ import FloatingBallScroll from '../Animations/FloatingBallScroll';
 
 const Hero = () => {  
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-24 md:pt-0">
       <div className="absolute inset-0 pointer-events-none">
                 <FloatingBallScroll color="rgba(1, 0, 255, 0.6)" top="-10%" left="-10%" size="280px" direction="false" />
                 {/* <FloatingBallScroll color="rgba(255, 0, 1, 0.6)" top="20%" left="60%" size="280px" direction="true"/> */}
