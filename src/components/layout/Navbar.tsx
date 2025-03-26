@@ -6,7 +6,7 @@ const navigation = [
   { name: 'Home', hash: '#hero' },
   { name: 'About', hash: '#about' },
   { name: 'Experience', hash: '#experience' },
-  { name: 'Contact', hash: '#contact' },
+  { name: 'Connect', hash: '#footer' },
 ];
 
 const Navbar = () => {

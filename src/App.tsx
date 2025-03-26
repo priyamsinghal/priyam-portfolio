@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Home from './pages/Home';
+import ScrollIndicator from './components/Animations/ScrollIndicator';
 
 function App() {
   return (
@@ -11,12 +11,9 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Home />} />
-            <Route path="/experience" element={<Home />} />
-            <Route path="/contact" element={<Home />} />
           </Routes>
+          <ScrollIndicator />
         </main>
-        <Footer />
       </div>
     </Router>
   );

@@ -2,8 +2,8 @@
 import Hero from '../components/home/Hero';
 import About from '../pages/About';
 import Experience from '../pages/Experience';
-import Contact from '../pages/Contact';
 import ScrollReveal from '../components/ScrollReveal';
+import Footer from '../components/layout/Footer';
 import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -36,9 +36,9 @@ const Home = () => {
           <Experience />
         </ScrollReveal>
       </section>
-      <section id="contact">
+      <section id="footer">
         <ScrollReveal>
-          <Contact />
+          <Footer />
         </ScrollReveal>
       </section>
     </div>

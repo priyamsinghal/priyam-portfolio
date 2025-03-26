@@ -25,10 +25,10 @@ const Header = () => {
               Experience
             </Link>
             <Link 
-              to="#contact" 
+              to="#footer" 
               className="text-dark-200 hover:text-primary dark:text-light-100 dark:hover:text-primary"
             >
-              Contact
+              Connect
             </Link>
           </div>
         </div>

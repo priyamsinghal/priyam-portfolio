@@ -1,13 +1,15 @@
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Link
 
+ } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="min-w-screen mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <div className="flex flex-col md:flex-row gap-8 lg:max-w-6xl mx-auto">
           {/* Brand */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          <div className="md:mx-auto">
+            <h3 className="text-4xl font-semibold text-blue-600 dark:text-blue-400 mb-8">
               Priyam Singhal
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
@@ -16,38 +18,28 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          <div className="md:mx-auto">
+            <h3 className="text-4xl font-semibold text-blue-600 dark:text-blue-400 mb-8">
               Quick Links
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link to="#about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/experience" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                <Link to="#experience" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Experience
-                </a>
-              </li>
-              <li>
-                <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Social Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Connect
+          <div className="md:mx-auto">
+            <h3 className="text-4xl font-semibold text-blue-600 dark:text-blue-400 mb-8">
+              Get in Touch
             </h3>
             <div className="flex space-x-4">
               <a
@@ -78,7 +70,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <div className="mt-8 pt-2 pb-2 border-t border-gray-200 dark:border-gray-800 bg-gray-100">
           <p className="text-center text-gray-500 dark:text-gray-400">
             © {new Date().getFullYear()} Priyam Singhal. All rights reserved.
           </p>
