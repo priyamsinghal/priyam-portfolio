@@ -59,7 +59,7 @@ const Footer = () => {
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="https://twitter.com/priyamsinghal"
+                href="https://x.com/priyam_singhal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-400"
